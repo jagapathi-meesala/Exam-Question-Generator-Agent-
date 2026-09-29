@@ -1,0 +1,29 @@
+name: "generate-short-answer"
+description: "Generate short-answer questions from structured topic/content input."
+version: "1.0.0"
+input_schema:
+  type: "object"
+  properties:
+    topic:
+      type: "string"
+    source_text:
+      type: "string"
+    number_of_questions:
+      type: "integer"
+    difficulty:
+      type: "string"
+    expected_answer_length:
+      type: "integer"
+  required:
+    - "topic"
+    - "number_of_questions"
+    - "difficulty"
+    - "expected_answer_length"
+implementation:
+  type: "script"
+  path: "generate_short_answer.py"
+  runtime: "python3"
+annotations:
+  read_only: true
+  cost: "none"
+  idempotent: true

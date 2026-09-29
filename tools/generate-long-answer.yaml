@@ -1,0 +1,29 @@
+name: "generate-long-answer"
+description: "Generate descriptive/long-answer examination questions."
+version: "1.0.0"
+input_schema:
+  type: "object"
+  properties:
+    topic:
+      type: "string"
+    source_text:
+      type: "string"
+    number_of_questions:
+      type: "integer"
+    difficulty:
+      type: "string"
+    expected_marks:
+      type: "integer"
+  required:
+    - "topic"
+    - "number_of_questions"
+    - "difficulty"
+    - "expected_marks"
+implementation:
+  type: "script"
+  path: "generate_long_answer.py"
+  runtime: "python3"
+annotations:
+  read_only: true
+  cost: "none"
+  idempotent: true

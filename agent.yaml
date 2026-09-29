@@ -1,0 +1,13 @@
+name: "exam-question-generator-agent"
+version: "1.0.0"
+description: "Deterministic agent for generating and analyzing examination questions without an LLM dependency."
+author: "Agent Engineer"
+license: "MIT"
+tools:
+  - "generate-mcq"
+  - "generate-short-answer"
+  - "generate-long-answer"
+  - "generate-true-false"
+  - "classify-difficulty"
+  - "validate-question-set"
+  - "analyze-question-set"

@@ -1,0 +1,27 @@
+name: "classify-difficulty"
+description: "Classify questions into easy, medium, or hard using an explicit deterministic rule."
+version: "1.0.0"
+input_schema:
+  type: "object"
+  properties:
+    question_text:
+      type: "string"
+    expected_answer_complexity:
+      type: "integer"
+    number_of_concepts:
+      type: "integer"
+    number_of_steps:
+      type: "integer"
+  required:
+    - "question_text"
+    - "expected_answer_complexity"
+    - "number_of_concepts"
+    - "number_of_steps"
+implementation:
+  type: "script"
+  path: "classify_difficulty.py"
+  runtime: "python3"
+annotations:
+  read_only: true
+  cost: "none"
+  idempotent: true

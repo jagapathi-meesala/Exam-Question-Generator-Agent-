@@ -1,0 +1,34 @@
+name: "validate-question-set"
+description: "Validate a structured examination question set."
+version: "1.0.0"
+input_schema:
+  type: "object"
+  properties:
+    questions:
+      type: "array"
+      items:
+        type: "object"
+        properties:
+          id:
+            type: "string"
+          type:
+            type: "string"
+          question:
+            type: "string"
+          difficulty:
+            type: "string"
+        required:
+          - "id"
+          - "type"
+          - "question"
+          - "difficulty"
+  required:
+    - "questions"
+implementation:
+  type: "script"
+  path: "validate_question_set.py"
+  runtime: "python3"
+annotations:
+  read_only: true
+  cost: "none"
+  idempotent: true

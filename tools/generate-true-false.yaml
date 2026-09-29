@@ -1,0 +1,26 @@
+name: "generate-true-false"
+description: "Generate deterministic true/false questions."
+version: "1.0.0"
+input_schema:
+  type: "object"
+  properties:
+    topic:
+      type: "string"
+    source_text:
+      type: "string"
+    number_of_questions:
+      type: "integer"
+    difficulty:
+      type: "string"
+  required:
+    - "topic"
+    - "number_of_questions"
+    - "difficulty"
+implementation:
+  type: "script"
+  path: "generate_true_false.py"
+  runtime: "python3"
+annotations:
+  read_only: true
+  cost: "none"
+  idempotent: true
